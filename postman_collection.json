@@ -1,0 +1,13 @@
+{
+  "info": {
+    "name": "BloodBank Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {"name":"Admin Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"username\":\"admin\",\"password\":\"admin123\",\"role\":\"ADMIN\"}"},"url":{"raw":"http://localhost:8080/api/auth/login","protocol":"http","host":["localhost"],"port":"8080","path":["api","auth","login"]}}},
+    {"name":"Add Donor","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"name\":\"Anu Kumar\",\"email\":\"anu@example.com\",\"phone\":\"9876543210\",\"bloodGroup\":\"O_POSITIVE\",\"dateOfBirth\":\"2004-06-15\",\"active\":true}"},"url":{"raw":"http://localhost:8080/api/donors","protocol":"http","host":["localhost"],"port":"8080","path":["api","donors"]}}},
+    {"name":"Check Stock","request":{"method":"GET","url":{"raw":"http://localhost:8080/api/inventory/stock","protocol":"http","host":["localhost"],"port":"8080","path":["api","inventory","stock"]}}},
+    {"name":"Log Donation","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"donor\":{\"id\":1},\"bloodGroup\":\"O_POSITIVE\",\"collectionDate\":\"2026-09-28\",\"expiryDate\":\"2026-11-15\",\"units\":2}"},"url":{"raw":"http://localhost:8080/api/inventory/donations","protocol":"http","host":["localhost"],"port":"8080","path":["api","inventory","donations"]}}},
+    {"name":"Issue Blood","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"recipientName\":\"Patient A\",\"bloodGroup\":\"O_POSITIVE\",\"unitsIssued\":1}"},"url":{"raw":"http://localhost:8080/api/issues","protocol":"http","host":["localhost"],"port":"8080","path":["api","issues"]}}}
+  ]
+}

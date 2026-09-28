@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+<b>🩸 BloodBank Admin</b>
+<button onclick="logout()">Logout</button>
+</nav>
+
+<main class="dashboard">
+<h1>Admin Dashboard</h1>
+
+<div class="grid" id="stockCards"></div>
+
+<section class="panel">
+<h2>Add Donor</h2>
+<form id="donorForm" class="formgrid">
+<input id="dname" placeholder="Name" required>
+<input id="demail" type="email" placeholder="Email" required>
+<input id="dphone" placeholder="10-digit phone" required>
+<select id="dblood" required>
+<option value="">Blood Group</option>
+<option>A_POSITIVE</option>
+<option>A_NEGATIVE</option>
+<option>B_POSITIVE</option>
+<option>B_NEGATIVE</option>
+<option>AB_POSITIVE</option>
+<option>AB_NEGATIVE</option>
+<option>O_POSITIVE</option>
+<option>O_NEGATIVE</option>
+</select>
+<input id="dob" type="date">
+<button class="btn admin" type="submit">Add Donor</button>
+</form>
+<div id="donorMsg" class="message"></div>
+</section>
+
+<section class="panel">
+<h2>Log Donation</h2>
+<form id="donationForm" class="formgrid">
+<input id="donorId" type="number" placeholder="Donor ID" required>
+<select id="donationBlood" required>
+<option value="">Blood Group</option>
+<option>A_POSITIVE</option>
+<option>A_NEGATIVE</option>
+<option>B_POSITIVE</option>
+<option>B_NEGATIVE</option>
+<option>AB_POSITIVE</option>
+<option>AB_NEGATIVE</option>
+<option>O_POSITIVE</option>
+<option>O_NEGATIVE</option>
+</select>
+<input id="collectionDate" type="date" required>
+<input id="expiryDate" type="date" required>
+<input id="units" type="number" min="1" value="1" placeholder="Units" required>
+<button class="btn admin" type="submit">Save Donation</button>
+</form>
+<div id="donationMsg" class="message"></div>
+</section>
+
+<section class="panel">
+<h2>Donors</h2>
+<button class="btn" onclick="loadDonors()">Refresh Donors</button>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Blood</th>
+<th>Last Donation</th>
+<th>Eligibility</th>
+</tr>
+</thead>
+<tbody id="donors"></tbody>
+</table>
+</div>
+</section>
+
+<section class="panel">
+<h2>Recent Issue Records</h2>
+<button class="btn" onclick="loadIssues()">Refresh</button>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Recipient</th>
+<th>Blood</th>
+<th>Units</th>
+<th>Date</th>
+<th>Requested By</th>
+</tr>
+</thead>
+<tbody id="issues"></tbody>
+</table>
+</div>
+</section>
+
+</main>
+
+<script src="/js/common.js"></script>
+<script src="/js/admin.js"></script>
+
+</body>
+</html>
